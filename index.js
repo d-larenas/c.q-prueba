@@ -49,6 +49,7 @@ const getJumbo = async () => {
     await page.keyboard.type(password);
     await page.waitForTimeout(1000);
 
+    // get response in endpoint of login
     const userdata = page.waitForResponse(async response => {
         if (response.url() === url_login && response.request().method() === 'POST') {
             return response
